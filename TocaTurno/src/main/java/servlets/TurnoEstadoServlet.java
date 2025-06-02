@@ -21,7 +21,7 @@ public class TurnoEstadoServlet extends HttpServlet {
 
         TurnoController turnoController = new TurnoController();
 
-        //AQUI COGEMOS EL PARAMETRO ESTADO Y DEVOLVEMOS LA LISTA DE TURNOS ECONTRADOS POR ESTADO
+        //AQUI COGEMOS EL PARAMETRO ESTADO Y DEVOLVEMOS LA LISTA DE TURNOS ECONTRADOS POR ESTADOS IGUALES AL PARAMETRO.
         String estadoParam = req.getParameter("estado");
         List<Turno> lista = new ArrayList<>();
 

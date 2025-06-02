@@ -4,6 +4,7 @@ import entities.Estado;
 import entities.Turno;
 import persistences.GenericoJPA;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,6 +31,30 @@ public class TurnoController {
             List<Turno> list = genericoJPA.findAll();
 
             return list.stream().filter(e -> e.getEstado().equals(estado)).collect(Collectors.toList());
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    //METODO PARA GUARDAR UN NUEVO TURNO
+    public void crete(Turno turno){
+
+        try {
+            if (turno != null)
+                genericoJPA.create(turno);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    //METODO PARA LISTAR TODOS LOS TURNOS POR FECHA
+    public List<Turno> findFecha(LocalDate fecha) {
+
+        try {
+            List<Turno> lista = genericoJPA.findAll();
+            return lista.stream()
+                    .filter(t -> t.getFecha().toLocalDate().equals(fecha))
+                    .collect(Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }

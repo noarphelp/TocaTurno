@@ -1,6 +1,8 @@
 package servlets;
 
 import controllers.UsuarioController;
+import entities.Estado;
+import entities.Turno;
 import entities.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +19,7 @@ import java.util.List;
 public class TurnoServlet extends HttpServlet {
 
     UsuarioController usuarioController = new UsuarioController();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //ESTE METODO NOS TRAE LA LISTA DE USUARIOS PARA PODER ESCOGER UNO Y ASIGNÁRSELO A UN TURNO
@@ -34,5 +38,24 @@ public class TurnoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        //AQUI TRAEMOS LOS DATOS INTRODUCIDOS EN EL FRONT PARA PODER CREAR EL TURNO NUEVO ASOCIADO A UN USUARIO
+
+        LocalDateTime fecha = LocalDateTime.parse(req.getParameter("fecha"));
+        String descripcion = req.getParameter("descripcion");
+        Long id = Long.valueOf(req.getParameter("usuarioId"));
+        Estado estado = Estado.valueOf(req.getParameter("estado"));
+
+
+       // Usuario usuarioId = usuarioController.findById(id);  todo<-- falta implementar metodo por fatine de findById
+
+       // Turno turno = new Turno(fecha, descripcion, estado, usuarioId);
+
+       // turnoController.crete(turno);
+
+       // req.setAttribute("turnoCreado", turno);   <---- esta linea es por si queremos mostrar el turno creado justo despues de ser creado en el mismo jsp
+
+        req.getRequestDispatcher("turnos.jsp").forward(req, resp);
+
     }
 }
+
