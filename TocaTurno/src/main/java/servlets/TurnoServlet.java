@@ -24,14 +24,14 @@ public class TurnoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //ESTE METODO NOS TRAE LA LISTA DE USUARIOS PARA PODER ESCOGER UNO Y ASIGNÁRSELO A UN TURNO
 
-//        List<Usuario> lista = usuarioController.findAll();  todo<-- falta implementar metodo por fatine de findall
-//        if (lista == null) {
-//            lista = new ArrayList<>();
-//        }
-//
-//        req.setAttribute("listaUsuarios" , lista);
-//
-//        req.getRequestDispatcher("turnos.jsp").forward(req ,resp);
+        List<Usuario> lista = usuarioController.findAll();
+        if (lista == null) {
+            lista = new ArrayList<>();
+        }
+
+        req.setAttribute("listaUsuarios" , lista);
+
+        req.getRequestDispatcher("turnos.jsp").forward(req ,resp);
     }
 
 
@@ -46,13 +46,13 @@ public class TurnoServlet extends HttpServlet {
         Estado estado = Estado.valueOf(req.getParameter("estado"));
 
 
-       // Usuario usuarioId = usuarioController.findById(id);  todo<-- falta implementar metodo por fatine de findById
+        Usuario usuarioId = usuarioController.findById(id);
 
-       // Turno turno = new Turno(fecha, descripcion, estado, usuarioId);
+        Turno turno = new Turno(fecha, descripcion, estado, usuarioId);
 
-       // turnoController.crete(turno);
+        turnoController.crete(turno);
 
-       // req.setAttribute("turnoCreado", turno);   <---- esta linea es por si queremos mostrar el turno creado justo despues de ser creado en el mismo jsp
+        req.setAttribute("turnoCreado", turno);  // <---- esta linea es por si queremos mostrar el turno creado justo despues de ser creado en el mismo jsp
 
         req.getRequestDispatcher("turnos.jsp").forward(req, resp);
 
