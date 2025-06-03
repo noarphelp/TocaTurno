@@ -10,15 +10,16 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/usuarios")
-public class UsuarioServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/usuarios")
+public class ListUsuarioServlet extends HttpServlet {
     private final UsuarioController usuarioController = new UsuarioController();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Usuario> usuarios = usuarioController.findAll();
-        request.setAttribute("usuarios", usuarios);
-        request.getRequestDispatcher("/usuarios.jsp").forward(request, response);
+        List<Usuario> listado = usuarioController.findAll();
+
+        // Enviar lista de usuarios a la vista JSP
+        request.setAttribute("listado", listado);
+        request.getRequestDispatcher("usuarios.jsp").forward(request, response);
     }
 }
-
