@@ -1,4 +1,5 @@
-https://chatgpt.com/s/m_68405c7718408191af109ce1c0b15460
+![Uploading ChatGPT Image 4 jun 2025, 16_47_53.png…]()
+
                                                                         
 🕒 TocaTurno
 TocaTurno es una aplicación diseñada para optimizar la asignación y gestión de turnos dentro de una institución pública. Permite a los usuarios registrarse, consultar la disponibilidad de turnos, administrar sus citas y verificar el estado de cada turno en tiempo real. Con una arquitectura basada en Java EE y JPA, la aplicación ofrece un entorno robusto y seguro para la administración eficiente de turnos.
@@ -43,6 +44,9 @@ Desplegar el proyecto con Tomcat.
 Acceder a la aplicación desde el navegador en:
 http://localhost:8080/TocaTurno
 
+## 🗂️ Estructura del proyecto
+
+```
 /tocaturno-app
 ├── src
 │   └── main
@@ -79,4 +83,4 @@ http://localhost:8080/TocaTurno
 │       ├── turnoFecha.jsp
 │       ├── turnos.jsp
 │       └── usuarios.jsp
-
+```
