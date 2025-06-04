@@ -1,16 +1,18 @@
-# TocaTurno
-Aplicación de gestión de turnos de una  institución publica 
-TocaTurno:es una aplicación diseñada para optimizar la asignación y gestión de turnos dentro de una institución pública. Permite a los usuarios registrarse, consultar la disponibilidad de turnos, administrar sus citas y verificar el estado de cada turno en tiempo real. Con una arquitectura basada en Java EE y JPA, la aplicación ofrece un entorno robusto y seguro para la administración eficiente de turnos. 
+                                                                          # TocaTurno
+ 
+TocaTurno es una aplicación diseñada para optimizar la asignación y gestión de turnos dentro de una institución pública. Permite a los usuarios registrarse, consultar la disponibilidad de turnos, administrar sus citas y verificar el estado de cada turno en tiempo real. Con una arquitectura basada en Java EE y JPA, la aplicación ofrece un entorno robusto y seguro para la administración eficiente de turnos. 
 
 Funcionalidades principales
 - **Registro de usuarios**: Permite la creación de nuevos usuarios con datos como nombre, apellido, email y edad.
-- **Gestión de turnos**: Los usuarios pueden visualizar y administrar los turnos asignados,buscar por estado.
-- **Filtrado de usuarios**: Búsqueda de usuarios por nombre, apellido, turno .
+- **Listado de usuarios**: Permite listar todos los usuarios existentes y sus turnos asociados, en base de datos.
+- **Creación de turnos**: Los usuarios pueden crear turnos y asociarlos a un usuario en concreto .
+- **Listado de turnos**: Permite listar todos los turnos existentes en base de datos.
+- **Filtrado de turnos por estado y fecha**: Búsqueda de turnos con un estado y una fecha en concreto.
 - **Estados de turnos** → Cada turno puede estar : atentdido o en espera.
 - **Interfaz basada en JSP**: Visualización de datos en páginas dinámicas mediante servlets.
 
 #Tecnologías utilizadas
-- **Java **:Backend con Servlets y JPA.
+- **Java **: Backend con Servlets y JPA.
 - **JPA (Java Persistence API)** :Persistencia de datos optimizada.
 - **Tomcat**:Servidor web para la ejecución de la aplicación.
 - **JSP **
@@ -18,9 +20,12 @@ Funcionalidades principales
 
 # Cómo ejecutar la aplicación
 1. **Configurar la base de datos** en MySQL con las tablas necesarias.
-2. **Desplegar el proyecto en Tomcat** .
-3. **Acceder a la aplicación** desde el navegador en `http://localhost:8080/turnos`.
+2. **Nombre de base de datos a crear ** ("jdbc:mysql://localhost:3306/toca_turno?serverTimezone=UTC").
+3. **Clonar proyecto en alguna carpeta local ** (git clone git@github.com:noarphelp/TocaTurno.git).
+4. **Desplegar el proyecto con Tomcat** .
+5. **Acceder a la aplicación** desde el navegador en `http://localhost:8080/TocaTurno`.
 
+\\\
 # Estructura del proyecto
 /tocaturno-app
 ├── src
@@ -54,4 +59,4 @@ Funcionalidades principales
 │   ├── turnos.jsp             # Página para gestionar turnos
 │   ├── usuarios.jsp           # Página para gestionar usuarios
 
-Un agradecimiento especial a [equipo de desarrollo] por su esfuerzo y dedicación en la creación de esta aplicación.
+\\\
