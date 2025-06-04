@@ -12,7 +12,7 @@ public class UsuarioController {
     private final GenericoJPA<Usuario, Long> usuarioJPA;
 
     public UsuarioController() {
-        this.usuarioJPA = new GenericoJPA<>();
+        this.usuarioJPA = new GenericoJPA<>(Usuario.class);
     }
     //Mét*odo para crear un nuevo usuario en la base de datos ,recibe usuario y lo guarda en jpa
     public void crearUsuario(Usuario usuario) {

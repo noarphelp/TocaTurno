@@ -9,7 +9,7 @@ public class GenericoJPA< T , ID> {
 
     private Class<T> entityClass = null;
 
-    public GenericoJPA() {
+    public GenericoJPA(Class<T> entityClass) {
         this.entityClass = entityClass;
     }
 

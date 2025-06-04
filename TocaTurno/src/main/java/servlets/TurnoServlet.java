@@ -1,5 +1,6 @@
 package servlets;
 
+import controllers.TurnoController;
 import controllers.UsuarioController;
 import entities.Estado;
 import entities.Turno;
@@ -19,6 +20,7 @@ import java.util.List;
 public class TurnoServlet extends HttpServlet {
 
     UsuarioController usuarioController = new UsuarioController();
+    TurnoController turnoController = new TurnoController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
