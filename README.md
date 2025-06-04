@@ -1,4 +1,4 @@
-![Uploading ChatGPT Image 4 jun 2025, 16_47_53.png…]()
+![image](https://github.com/user-attachments/assets/7f706b08-3df3-4367-a9af-51a3dd8d079d)
 
                                                                         
 🕒 TocaTurno
