@@ -2,12 +2,12 @@
 
 
                                                                         
-##🕒 TocaTurno
+## 🕒 TocaTurno
 TocaTurno es una aplicación diseñada para optimizar la asignación y gestión de turnos dentro de una institución pública. Permite a los usuarios registrarse, consultar la disponibilidad de turnos, administrar sus citas y verificar el estado de cada turno en tiempo real. Con una arquitectura basada en Java EE y JPA, la aplicación ofrece un entorno robusto y seguro para la administración eficiente de turnos.
 
 
 
-##✨ Funcionalidades principales
+## ✨ Funcionalidades principales
 Registro de usuarios: Permite la creación de nuevos usuarios con datos como nombre, apellido, email y edad.
 
 Listado de usuarios: Muestra todos los usuarios registrados y sus turnos asociados en la base de datos.
@@ -24,7 +24,7 @@ Interfaz basada en JSP: Visualización de datos en páginas dinámicas mediante 
 
 
 
-##🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologías utilizadas
 Java: Backend con Servlets y JPA.
 
 JPA (Java Persistence API): Persistencia de datos optimizada.
@@ -37,7 +37,7 @@ MySQL: Almacenamiento de datos.
 
 
 
-##🚀 Cómo ejecutar la aplicación
+## 🚀 Cómo ejecutar la aplicación
 Configurar la base de datos en MySQL con las tablas necesarias.
 
 Crear una base de datos con la siguiente URL de conexión:
