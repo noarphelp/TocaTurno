@@ -93,4 +93,4 @@ http://localhost:8080/TocaTurno
 │       ├── turnos.jsp
 │       └── usuarios.jsp
 ```
-Un agradecimiento especial a equipo de desarollo por su esfuerzo y dedicación en la creación de esta aplicación.
+Un agradecimiento especial a l equipo de desarollo por su esfuerzo y dedicación en la creación de esta aplicación.
