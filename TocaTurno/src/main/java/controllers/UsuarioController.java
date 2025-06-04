@@ -5,41 +5,29 @@ import persistences.GenericoJPA;
 
 
 import java.util.List;
-import java.util.Optional;
+
 
 public class UsuarioController {
 
     private final GenericoJPA<Usuario, Long> usuarioJPA;
 
     public UsuarioController() {
-        this.usuarioJPA = new GenericoJPA<>(Usuario.class);
+        this.usuarioJPA = new GenericoJPA<>();
     }
+    //Mét*odo para crear un nuevo usuario en la base de datos ,recibe usuario y lo guarda en jpa
+    public void crearUsuario(Usuario usuario) {
+        usuarioJPA.create(usuario);
 
-    public void crearUsuario(String nombre, String apellido, String email, String edad) {
-        Usuario nuevoUsuario = new Usuario();
-        nuevoUsuario.setNombre(nombre);
-        nuevoUsuario.setApellido(apellido);
-        nuevoUsuario.setEmail(email);
-        nuevoUsuario.setEdad(edad);
-
-        usuarioJPA.create(nuevoUsuario);
     }
-
+    // met*do para buscar lista de todos los usuarios
     public List<Usuario> findAll() {
         return usuarioJPA.findAll();
     }
-
+    // met*odo buscaro por ID
     public Usuario findById(Long id) {
         return usuarioJPA.findById(id);
 
     }
 
-    public List<Usuario> filterUsuarios(String palabraBuscada) {
-        List<Usuario> listado = usuarioJPA.findAll();
 
-        return listado.stream()
-                .filter(usuario -> usuario.getNombre().toLowerCase().contains(palabraBuscada.toLowerCase()) ||
-                        usuario.getApellido().toLowerCase().contains(palabraBuscada.toLowerCase()))
-                .toList();
-    }
 }

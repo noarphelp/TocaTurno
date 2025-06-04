@@ -10,10 +10,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/usuarios")
+@WebServlet(urlPatterns = "/listUsuarios")
 public class ListUsuarioServlet extends HttpServlet {
     private final UsuarioController usuarioController = new UsuarioController();
 
+     //met*odo que maneja las solicitudes Get al servlet,obtiene lista de usuarios desde el controlador .
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Usuario> listado = usuarioController.findAll();

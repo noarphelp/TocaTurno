@@ -7,9 +7,9 @@ import java.util.List;
 
 public class GenericoJPA< T , ID> {
 
-    private final Class<T> entityClass;
+    private Class<T> entityClass = null;
 
-    public GenericoJPA(Class<T> entityClass) {
+    public GenericoJPA() {
         this.entityClass = entityClass;
     }
 
