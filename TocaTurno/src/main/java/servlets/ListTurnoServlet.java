@@ -26,7 +26,7 @@ public class ListTurnoServlet extends HttpServlet {
             lista = new ArrayList<>();
         }
 
-        req.setAttribute("listadoTurnos", lista);
+        req.setAttribute("listaTurnos", lista);
 
         req.getRequestDispatcher("listTurnos.jsp").forward(req, resp);
     }

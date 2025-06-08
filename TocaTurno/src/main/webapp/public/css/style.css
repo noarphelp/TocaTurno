@@ -1,0 +1,336 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+
+body.small-font {
+    font-size: 15px;
+}
+
+body.large-font {
+    font-size: 45px;
+}
+
+
+body {
+    background: url('../images/turnos.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 33, 71, 0.8);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 16px;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    gap: 0.5rem;
+}
+
+/* Menu */
+.nav-menu {
+    position: relative;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    color: white;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        background-color: rgba(0, 33, 71, 0.95);
+        top: 60px;
+        width: 200px;
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Main */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+h1.max-font{
+
+    font-size: 12rem;
+}
+
+/* Formulario */
+.form-usuario {
+    background-color: rgba(0, 33, 71, 0.85);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #0066cc;
+    background-color: #fff;
+}
+
+/* Botones del formulario */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.form-buttons-volver {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    background-color: #0066cc;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+}
+
+.btn:hover {
+    background-color: #004d99;
+}
+
+.btn-secondary {
+    background-color: #555;
+}
+
+.btn-volver{
+     padding: 1rem 2rem;
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+
+/* css tabla personas*/
+
+  .tabla-personas {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ccc;
+  }
+
+  .tabla-personas th,
+  .tabla-personas td {
+    border: 2px solid #ccc;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .tabla-personas thead {
+    background-color: #3b5998;
+    color: white;
+  }
+
+  .tabla-personas tbody tr:hover {
+      background-color: rgba(0, 33, 71, 0.9);
+      color: white;
+  }
+
+
+  .contenido-principal {
+    padding: 20px;
+  }
+
+
+  .contenido-principal h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /*formulario turnos */
+
+      .ticket-creado {
+          margin-top: 2rem;
+          background-color: rgba(0, 33, 71, 0.85);
+          padding: 2rem;
+          border-radius: 12px;
+          text-align: center;
+          color: white;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+          max-width: 600px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .ticket-creado h2 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+      }
+
+    /* Mejora visual para las filas de la tabla sobre fondo oscuro */
+    .tabla-personas tbody tr {
+        background-color: rgba(0, 33, 71, 0.6); /* fondo azul translúcido */
+        color: white;
+    }
+
+    /* Asegura contraste en las celdas también */
+    .tabla-personas tbody td {
+        color: white;
+    }
+
+    /* Cabecera con mejor contraste */
+    .tabla-personas thead {
+        background-color: rgba(0, 33, 71, 0.9); /* más opaco para encabezados */
+        color: #fff;
+    }
+
+
+    .mensaje {
+        padding: 1em;
+        margin: 1em 0;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.3em; /* Aumenta este valor según lo grande que lo quieras */
+    }
+
+    .mensaje.exito {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .mensaje.error {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+
+
+/* Responsive Form */
+@media (max-width: 600px) {
+    .form-usuario {
+        padding: 1.5rem;
+    }
+
+    .btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+}

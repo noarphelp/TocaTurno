@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
 
@@ -20,16 +21,20 @@ public class UsuarioServlet extends HttpServlet {
         //es un met*odo que recibe una solicitud POST para registrar un nuevo usuario en la base de datos.
         try {
             String nombre = req.getParameter("nombre");
-            String apellido = req.getParameter("apellido");
+            String apellido = req.getParameter("apellidos");
             Integer edad = Integer.valueOf(req.getParameter("edad"));
             String email = req.getParameter("email");
-            Usuario usuario = new Usuario(nombre ,apellido ,email,edad );
+            Usuario usuario = new Usuario(nombre, apellido, email, edad);
             usuarioController.crearUsuario(usuario);
 
-            // redireccionar a la página de usuarios
-            req.getRequestDispatcher("usuarios.jsp").forward(req,resp);
+            //mandar mensaje de éxito al crear usuario nuevo
+            req.setAttribute("mensaje", "Usuario creado con éxito.");
+            req.setAttribute("tipoMensaje", "exito");
 
-           //excepciones para que si el usuario introduzca datos diferentes a la hora de registrarse,y otros excepciones si hay problema interno en el servlet,
+            // redireccionar a la página de usuarios
+            req.getRequestDispatcher("usuarios.jsp").forward(req, resp);
+
+            //excepciones para que si el usuario introduzca datos diferentes a la hora de registrarse, y otros excepciones si hay problema interno en el servlet,
         } catch (NumberFormatException e) {
             throw new RuntimeException(e);
         } catch (ServletException e) {

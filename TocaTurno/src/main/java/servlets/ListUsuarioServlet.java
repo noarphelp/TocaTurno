@@ -21,6 +21,6 @@ public class ListUsuarioServlet extends HttpServlet {
 
         // Enviar lista de usuarios a la vista JSP
         request.setAttribute("listado", listado);
-        request.getRequestDispatcher("usuarios.jsp").forward(request, response);
+        request.getRequestDispatcher("listUsuarios.jsp").forward(request, response);
     }
 }

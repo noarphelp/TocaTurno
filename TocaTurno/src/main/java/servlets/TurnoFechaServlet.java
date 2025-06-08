@@ -35,7 +35,8 @@ public class TurnoFechaServlet extends HttpServlet {
 
         } catch (Exception e) {
 
-            throw new RuntimeException(e.getMessage());
+            req.setAttribute("error", "Error al obtener turnos por fecha: " + e.getMessage());
+            req.getRequestDispatcher("turnoFecha.jsp").forward(req, resp);
         }
 
 
