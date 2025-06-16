@@ -1,8 +1,9 @@
 package servlets;
 
 import controllers.TurnoController;
-import entities.Estado;
+
 import entities.Turno;
+import enums.Estado;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

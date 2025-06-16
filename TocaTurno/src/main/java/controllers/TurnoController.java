@@ -1,7 +1,8 @@
 package controllers;
 
-import entities.Estado;
+
 import entities.Turno;
+import enums.Estado;
 import persistences.GenericoJPA;
 
 import java.time.LocalDate;

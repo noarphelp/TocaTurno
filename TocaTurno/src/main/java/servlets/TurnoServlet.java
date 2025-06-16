@@ -52,7 +52,7 @@ public class TurnoServlet extends HttpServlet {
 
         Turno turno = new Turno(fecha, descripcion, estado, usuarioId);
 
-        turnoController.crete(turno);
+        turnoController.create(turno);
 
         req.setAttribute("turnoCreado", turno);  // <---- esta linea es por si queremos mostrar el turno creado justo despues de ser creado en el mismo jsp
 
